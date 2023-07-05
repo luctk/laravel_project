@@ -19,7 +19,7 @@
 
     <link rel="stylesheet" href="{{asset('client/assets/css/templatemo-hexashop.css')}}">
 
-    <link rel="stylesheet" href="{{asset('client/assets/css/owl-carousel.css')}}">
+    <link rel="stylesheet" href="{{asset('client/assets/css/owl-carousel.css')}}">cd
 
     <link rel="stylesheet" href="{{asset('client/assets/css/lightbox.css')}}">
 <!--
