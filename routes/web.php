@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\Admin\RoleController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +26,13 @@ Route::get('/home', function () {
 });
 Auth::routes();
 Route::resource('roles',RoleController::class);
-
-
+Route::resource('users',UserController::class);
+//Route::resource('categories',CategoryController::class);
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/list-category',[CategoryController::class, 'list_category'])->name('list-category');
+//Route::post('/list-category',[CategoryController::class, 'list_category'])->name('search-category');
+//Route::get('/list-user',[UserController::class, 'list_user'])->name('list-user');
+//Route::match(['GET','POST'],'/add/user',[UserController::class,'add'])->name('add-user');
+//Route::match(['GET','POST'],'/add/category',[CategoryController::class,'add'])->name('add-category');
+//Route::match(['GET','POST'],'/edit/category/{id}',[CategoryController::class,'edit'])->name('edit-category');
+

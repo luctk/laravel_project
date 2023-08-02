@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->unsignedBigInteger('parent_id');
             $table->timestamps();
+            $table->softDeletes();
         });
         Schema::create('category_product', function (Blueprint $table) {
             $table->id();
@@ -25,6 +26,7 @@ return new class extends Migration
             $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
 
             $table->timestamps();
+
         });
     }
 
