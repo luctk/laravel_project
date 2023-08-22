@@ -27,6 +27,7 @@ Route::get('/home', function () {
 Auth::routes();
 Route::resource('roles',RoleController::class);
 Route::resource('users',UserController::class);
+Route::resource('categories',CategoryController::class);
 //Route::resource('categories',CategoryController::class);
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Route::get('/list-category',[CategoryController::class, 'list_category'])->name('list-category');

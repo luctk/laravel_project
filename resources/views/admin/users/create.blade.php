@@ -3,7 +3,6 @@
 @section('content')
     <div class="card">
         <h1>Create User</h1>
-
         <div>
             <form action="{{ route('users.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -26,7 +25,6 @@
                 <div class="input-group input-group-static mb-4">
                     <label>Name</label>
                     <input type="text" value="{{ old('name') }}" name="name" class="form-control">
-
                     @error('name')
                     <span class="text-danger"> {{ $message }}</span>
                     @enderror

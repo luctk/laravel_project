@@ -1,26 +1,50 @@
 @extends('admin.layouts.app')
-@section('title','Roles')
+@section('title', 'Category')
 @section('content')
-    <div><a href="{{route('add-category')}}">Thêm danh mục</a></div>
-    <form action="{{route('search-category')}}" method="POST">
-        @csrf
-        <input type="text" name="searchCategory">
-        <input type="submit" value="Search" name="btnSend">
-    </form>
+    <div class="card">
 
-    <table class="table table-striped table-hover">
-        <th>ID</th>
-        <th>Name</th>
-        <th>Thao tác</th>
-        @foreach($listCategory as $category)
-            <tr>
-                <td>{{$category->id}}</td>
-                <td>{{$category->name}}</td>
-                <td><a href="{{route('edit-category',['id'=>$category->id])}}">Sửa</a></td>
-                {{--                <td><a href="{{route('delete-category',['id'=>$category->id])}}">Xóa</a></td>--}}
-            </tr>
-        @endforeach
+        @if (session('message'))
+            <h1 class="text-primary">{{ session('message') }}</h1>
+        @endif
+        <h1>
+            Category list
+        </h1>
+        <div>
+            <a href="{{ route('categories.create') }}" class="btn btn-primary">Create</a>
+        </div>
+        <div>
+            <table class="table table-hover">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Parent Name</th>
+                    <th>Action</th>
+                </tr>
+                @foreach ($categories as $item)
+                    <tr>
+                        <td>{{ $item->id }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->parent_name }}</td>
+                        <td>
+                            <a href="{{ route('categories.edit', $item->id) }}" class="btn btn-warning">Edit</a>
+                            <form action="{{ route('categories.destroy', $item->id) }}"
+                                  id="form-delete{{ $item->id }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button class="btn btn-delete btn-danger" data-id={{ $item->id }}>Delete</button>
 
-    </table>
+                            </form>
 
+                        </td>
+                    </tr>
+                @endforeach
+            </table>
+            {{ $categories->links() }}
+        </div>
+
+    </div>
 @endsection
+@section('script')
+    <script src="{{asset('admin/assets/base/base.js')}}"></script>
+@endsection
+

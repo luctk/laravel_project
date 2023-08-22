@@ -26,6 +26,7 @@ class UserController extends Controller
 
     public function index()
     {
+
         $users = $this->user->latest('id')->paginate(5);
         //        dd($users);
         return view('admin.users.index', compact('users'));

@@ -18,15 +18,13 @@ return new class extends Migration
             $table->string('name');
             $table->unsignedBigInteger('parent_id');
             $table->timestamps();
-            $table->softDeletes();
+//            $table->softDeletes();
         });
         Schema::create('category_product', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Category::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
-
             $table->timestamps();
-
         });
     }
 
@@ -36,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('category');
+        Schema::dropIfExists('categories');
     }
 };
