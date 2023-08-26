@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\RoleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +29,7 @@ Auth::routes();
 Route::resource('roles',RoleController::class);
 Route::resource('users',UserController::class);
 Route::resource('categories',CategoryController::class);
+Route::resource('products',ProductController::class);
 //Route::resource('categories',CategoryController::class);
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Route::get('/list-category',[CategoryController::class, 'list_category'])->name('list-category');

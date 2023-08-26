@@ -53,7 +53,6 @@
                         <option value="fe-male">FeMale</option>
 
                     </select>
-
                     @error('gender')
                     <span class="text-danger"> {{ $message }}</span>
                     @enderror
@@ -107,27 +106,6 @@
     <script src="{{asset('bootstrap/jquery/dist/jquery.min.js')}}"></script>
     <script src="{{asset('bootstrap/input-mask/jquery.inputmask.js')}}"></script>
     <script src="{{asset('bootstrap/input-mask/jquery.inputmask.date.extensions.js')}}"></script>
-    {{--    <script src="https://code.jquery.com/jquery-3.7.0.js"--}}
-    {{--            integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>--}}
-    {{--    <script>--}}
-    {{--        $(() => {--}}
-    {{--            function readURL(input) {--}}
-    {{--                if (input.files && input.files[0]) {--}}
-    {{--                    var reader = new FileReader();--}}
-    {{--                    reader.onload = function (e) {--}}
-    {{--                        $('#show-image').attr('src', e.target.result);--}}
-    {{--                    };--}}
-    {{--                    reader.readAsDataURL(input.files[0]);--}}
-    {{--                }--}}
-    {{--            }--}}
-
-    {{--            $("#image-input").change(function () {--}}
-    {{--                readURL(this);--}}
-    {{--            });--}}
-
-
-    {{--        });--}}
-    {{--    </script>--}}
     <script>
         $(function () {
             function readURL(input, selector) {

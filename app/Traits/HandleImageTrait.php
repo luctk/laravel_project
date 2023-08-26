@@ -7,7 +7,7 @@ use Image;
 
 trait HandleImageTrait
 {
-    protected $path = 'upload/users/';
+    protected $path = 'upload/';
 
     /**
      * @param $request
@@ -24,14 +24,6 @@ trait HandleImageTrait
      */
     public function saveImage($request)
     {
-//        if ($this->verify($request)) {
-//            $file = $request->file('image');
-//            $name = time() . $file->getClientOriginalName();
-//            $extension = $file->getClientOriginalExtension();
-//            $image = Image::make($file)->resize(300, 300);
-//            Storage::put($this->path . $name, $image);
-//            return $name;
-//        }
         if($this->verify($request)){
             $image=$request->file('image');
             $name=time().'.'.$image->getClientOriginalExtension();

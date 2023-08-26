@@ -45,6 +45,6 @@
     </div>
 @endsection
 @section('script')
-    <script src="{{asset('admin/assets/base/base.js')}}"></script>
+{{--    <script src="{{asset('admin/assets/base/base.js')}}"></script>--}}
 @endsection
 
